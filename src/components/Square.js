@@ -3,10 +3,11 @@ import ReactDOM from 'react-dom';
 
 const Square = props => {
   const { handleClick, rowNum, squareNum, text } = props;
+  const squareClassName = `square ${text ? 'square-selected' : null}`;
 
   return (
-    <div className="square" onClick={() => props.handleClick(rowNum, squareNum)}>
-      {text}
+    <div className={squareClassName} onClick={() => props.handleClick(rowNum, squareNum)}>
+      <p className="xo">{text ? text : '-'}</p>
     </div>
   );
 };
