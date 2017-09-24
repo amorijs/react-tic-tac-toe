@@ -6,19 +6,15 @@ export default class Board extends Component {
   constructor(props) {
     super(props);
     this.state = this.getInitialState();
-    this.handleTurn = this.handleTurn.bind(this);
-    this.checkWin = this.checkWin.bind(this);
-    this.handleWin = this.handleWin.bind(this);
-    this.resetGame = this.resetGame.bind(this);
   }
 
-  getInitialState() {
+  getInitialState = () => {
     // Create 2-Dimensional 3x3 array representing our board.  Each sub-array is a row.
     const rows = new Array(3).fill(new Array(3).fill(null));
     return { rows, turn: 0 };
-  }
+  };
 
-  handleTurn(rowNum, squareNum) {
+  handleTurn = (rowNum, squareNum) => {
     if (this.state.rows[rowNum][squareNum]) return;
     const newRows = [...this.state.rows].map(row => [...row]);
     newRows[rowNum][squareNum] = this.state.turn % 2 === 0 ? 'X' : 'O';
@@ -27,9 +23,9 @@ export default class Board extends Component {
       if (this.checkWin()) this.handleWin();
       else this.setState({ turn: this.state.turn + 1 });
     });
-  }
+  };
 
-  checkWin() {
+  checkWin = () => {
     // Horizontal win combos
     const { rows } = this.state;
 
@@ -49,20 +45,20 @@ export default class Board extends Component {
     }
 
     return false;
-  }
+  };
 
-  handleWin() {
+  handleWin = () => {
     setTimeout(() => {
       alert(`${this.state.turn % 2 === 0 ? 'X' : 'O'} WINS! VERY WOW!`);
       this.resetGame();
     }, 5);
-  }
+  };
 
-  resetGame() {
+  resetGame = () => {
     this.setState(this.getInitialState());
-  }
+  };
 
-  render() {
+  render = () => {
     const rows = [];
 
     for (let i = 0; i < 3; i += 1) {
@@ -82,5 +78,5 @@ export default class Board extends Component {
         <button onClick={this.resetGame}>Reset Game </button>
       </div>
     );
-  }
+  };
 }
