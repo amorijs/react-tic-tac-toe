@@ -1,5 +1,9 @@
-body, html {
-  font-family: Arial, Helvetica, sans-serif;  
+$border-size: 2px;
+$border-style: $border-size solid #a1f4fa;
+
+body,
+html {
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 .board {
@@ -8,22 +12,20 @@ body, html {
   margin: 50px auto;
   display: grid;
   grid-template-rows: 1fr 1fr 1fr;
-  border: 1px solid #000;
+  // border: $border-style;
 }
 
 .row {
-  height: 100%;
-  width: 100%;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
 }
 
 .row:first-child {
-  border-bottom: 1px solid #000;
+  border-bottom: $border-style;
 }
 
 .row:last-child {
-  border-top: 1px solid #000;
+  border-top: $border-style;
 }
 
 .square {
@@ -32,20 +34,28 @@ body, html {
   color: #B000;
 }
 
+.square:first-child {
+  border-right: $border-style;
+}
+
+.square:last-child {
+  border-left: $border-style;
+}
+
 .square:hover {
   background-color: #eee;
 }
 
+.square-selected.X {
+  color: #ff3333;
+}
+
+.square-selected.O {
+  color: #239bff;
+}
+
 .square-selected:hover {
   background-color: inherit;
-}
-
-.square:first-child {
-  border-right: 1px solid #000;
-}
-
-.square:last-child {
-  border-left: 1px solid #000;
 }
 
 .xo {
