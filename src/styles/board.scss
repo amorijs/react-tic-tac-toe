@@ -1,0 +1,54 @@
+body, html {
+  font-family: Arial, Helvetica, sans-serif;  
+}
+
+.board {
+  height: 500px;
+  width: 500px;
+  margin: 50px auto;
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr;
+  border: 1px solid #000;
+}
+
+.row {
+  height: 100%;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.row:first-child {
+  border-bottom: 1px solid #000;
+}
+
+.row:last-child {
+  border-top: 1px solid #000;
+}
+
+.square {
+  display: flex;
+  cursor: default;
+  color: #B000;
+}
+
+.square:hover {
+  background-color: #eee;
+}
+
+.square-selected:hover {
+  background-color: inherit;
+}
+
+.square:first-child {
+  border-right: 1px solid #000;
+}
+
+.square:last-child {
+  border-left: 1px solid #000;
+}
+
+.xo {
+  margin: auto;
+  font-size: 52px;
+}
