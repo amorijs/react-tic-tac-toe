@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import ReactDOM from 'react-dom';
 import Row from './Row';
+import '../styles/board.scss';
 
 export default class Board extends Component {
   constructor(props) {

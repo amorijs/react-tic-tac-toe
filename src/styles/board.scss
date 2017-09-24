@@ -7,8 +7,8 @@ html {
 }
 
 .board {
-  height: 500px;
-  width: 500px;
+  height: 300px;
+  width: 300px;
   margin: 50px auto;
   display: grid;
   grid-template-rows: 1fr 1fr 1fr;
@@ -60,5 +60,5 @@ html {
 
 .xo {
   margin: auto;
-  font-size: 52px;
+  font-size: 48px;
 }

@@ -1,5 +1,4 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 
 const Square = props => {
   const { handleClick, rowNum, squareNum, text } = props;
